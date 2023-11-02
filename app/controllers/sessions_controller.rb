@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
     def app
+        @message = Message.new
         @messages = Message.all
     end
 
@@ -24,7 +25,7 @@ class SessionsController < ApplicationController
       def destroy
         session[:user_id] = nil
         flash[:success] = "You have successfully logged out"
-        redirect_to home_path
+        redirect_to app_path
       end
       
     

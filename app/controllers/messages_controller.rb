@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     def create
       message = current_user.messages.build(message_params)
       if message.save
-        redirect_to home_path
+        redirect_to app_path
       end
     end
   
